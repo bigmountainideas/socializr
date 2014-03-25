@@ -1,6 +1,6 @@
 {
   "name": "socializr",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Read data streams from several social networks.",
   "main": "index.js",
   "scripts": {
@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "MD5": "^1.2.0",
-    "underscore": "^1.6.0"
+    "underscore": "^1.6.0",
+    "superagent": "0.17.x"
   }
 }
