@@ -10,58 +10,54 @@ Read data streams from several social networks.
 ### API
 
 
-.stream({
-  tag: 'atag',
-  access_token: 'token for this stream'
-})
-
-.stream({
-  user: 'username | id',
-  access_token: 'token for this stream'
-})
-
-.stream({
-  location: 'location id',
-  access_token: 'token for this stream'
-}, {
-  reconnection_timeout: 5000,
-  retry_limit: 10
-})
-
-.stream({
-  
-})
-
 
 
 
 ### Examples
 
 #### Twitter
-```
-  var tw = new socializr.Twitter({
-    key: ‘your twitter application id',
-    secret: ‘your twitter application secret',
-  })
+```javascript
+var twitter = new socializr.Twitter({
+  key: 'TWITTER_API_KEY',
+  secret: 'TWITTER_API_SECRET'
+}, {
+  filters: [
+    function(obj) {
+      return !obj.hasOwnProperty('retweeted_status');
+    }
+  ]
+});
 
-  // add tag to follow
-  .addTerm(['#sxsw’])
-  // add user id to follow
-  .addUser([1351038806])
-  // add geo bounds to search
-  .addLocation([{
-    sw: { lat: '43.6387773', lng: '-79.3964338' },
-    ne: { lat: '43.65082659999999', lng: '-79.37785149999999’ }
-  }])
+var social = socializr([twitter]);
 
-  .on('error', function(err){
-    // handle error
+var auths = [
+  twitter.auth({
+    user: 'USER_ID',
+    token: 'USER_ACCESS_TOKEN',
+    secret: 'USER_TOKEN_SECRET'
   })
-  .on('data', function(tweet, match){
-    // process tweet
-  })
-  .stream();
+];
+
+social.on('warning', function(err) {
+    return console.log('error', err);
+  });
+
+social.on('data', function(msg) {
+    return console.log(msg);
+  });
 ```
+
+Add data to stream
+```javascript
+social.stream({
+  tags: ['Toronto', '#applehot'],
+  users: [972651, 759251],
+  language: 'en'
+}, auths);
+```
+
+If you need to add new tags or users just call the `stream` function again with the updated data.
+
 
 #### Facebook
 ```
