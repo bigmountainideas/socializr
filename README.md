@@ -10,34 +10,6 @@ Read data streams from several social networks.
 ### API
 
 
-<<<<<<< Updated upstream
-=======
-.stream({
-  tag: 'atag',
-  access_token: 'token for this stream'
-})
-
-.stream({
-  user: 'username | id',
-  access_token: 'token for this stream'
-})
-
-.stream({
-  location: 'location id',
-  access_token: 'token for this stream'
-}, {
-  reconnection_timeout: 5000,
-  retry_limit: 10
-})
-
-.stream({
-  
-})
-
->>>>>>> Stashed changes
-
-
-
 ### Examples
 
 #### Twitter
