@@ -34,6 +34,8 @@
     "MD5": "^1.2.0",
     "underscore": "^1.6.0",
     "superagent": "0.17.x",
-    "async": "^0.6.2"
+    "async": "^0.6.2",
+    "pragma-scheduler": "^1.0.5",
+    "node-uuid": "^1.4.1"
   }
 }
