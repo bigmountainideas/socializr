@@ -1,6 +1,6 @@
 {
   "name": "socializr",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "description": "Read data streams from several social networks.",
   "main": "index.js",
   "scripts": {
