@@ -36,6 +36,7 @@
     "superagent": "0.17.x",
     "async": "^0.6.2",
     "pragma-scheduler": "^1.0.5",
-    "node-uuid": "^1.4.1"
+    "node-uuid": "^1.4.1",
+    "debug": "^2.1.0"
   }
 }
