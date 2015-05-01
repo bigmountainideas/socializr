@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - 0.8
+  - 0.10
+  - 0.12
+  - 1.0
+  - 1.6
+services:
+  - mongodb
+sudo: false
+script: "npm run test-cov"
